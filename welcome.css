@@ -1,0 +1,229 @@
+/* ---- design tokens (aligned with popup.css) ---- */
+:root {
+  --c-bg: #fafaf7;
+  --c-bg-subtle: #f2f1ec;
+  --c-bg-card: #ffffff;
+  --c-fg: #1a1a1a;
+  --c-fg-muted: #595953;
+  --c-fg-faint: #83837c;
+  --c-accent: #ab4f12;
+  --c-accent-soft: #f7e8da;
+  --c-step: #ab4f12;
+  --c-step-bg: #f7e8da;
+  --c-border: #e2dfd4;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --max-width: 720px;
+  --radius: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--c-bg);
+  color: var(--c-fg);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* ---- layout ---- */
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 28px 20px 56px;
+}
+
+/* ---- title: icon + name + Installed (one line) ---- */
+.install-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 28px;
+  font-size: clamp(22px, 4.5vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.install-title__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.install-title__name,
+.install-title__installed {
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+/* ---- steps ---- */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 14px;
+  align-items: center;
+}
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--c-step-bg);
+  color: var(--c-step);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.step-num--range {
+  width: auto;
+  min-width: 42px;
+  padding: 0 8px;
+  border-radius: 999px;
+  letter-spacing: -0.02em;
+}
+
+.step-text {
+  min-width: 0;
+}
+
+.step-text h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.step-text p {
+  margin: 0;
+  color: var(--c-fg-muted);
+  font-size: 15px;
+}
+
+.step-text strong {
+  color: var(--c-fg);
+  font-weight: 600;
+}
+
+.step-visual {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.2),
+    0 12px 24px -8px rgba(0, 0, 0, 0.1);
+}
+
+.step-screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Per-export edge trim (Figma export artifacts) */
+.step-screenshot--setup {
+  clip-path: inset(0.5px 0.5px 0 0);
+}
+
+.step-screenshot--click {
+  clip-path: inset(1px 1.5px 0 0);
+}
+
+/* ---- features ---- */
+.features {
+  margin-top: 48px;
+  padding: 24px;
+  background: var(--c-bg-subtle);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+}
+
+.features h2 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 650;
+  text-align: center;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.feature-item {
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 22px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.feature-item h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.feature-item p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--c-fg-muted);
+  line-height: 1.4;
+}
+
+/* ---- footer ---- */
+.site-footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--c-border);
+  text-align: center;
+  font-size: 13px;
+  color: var(--c-fg-faint);
+}
+
+.site-footer p {
+  margin: 0 0 8px;
+}
+
+/* ---- responsive ---- */
+@media (max-width: 520px) {
+  .page {
+    padding: 20px 16px 40px;
+  }
+}
