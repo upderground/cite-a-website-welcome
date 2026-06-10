@@ -1,6 +1,6 @@
 # Privacy Policy for Cite a Website
 
-Effective date: [DATE]
+Effective date: 06.10.2026 (June 10th, 2026)
 
 Cite a Website helps users create APA 7 and MLA 9 citations from webpages they choose to cite. This Privacy Policy explains what information Cite a Website processes, why it is processed, and how users can control it.
 
